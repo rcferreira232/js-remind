@@ -1,0 +1,183 @@
+Js
+
+--------------------------------
+Array
+
+const array = [
+    "green",
+    "red"
+] 
+no caso um array de cores
+--------------------------------
+Objeto
+
+const obj = {
+    name: rafael,
+    job: dev,
+    age: 22,
+}
+no caso info sobre uma pessoa
+--------------------------------
+Math
+
+Math.random() = gera números entre 0.1...9~0.9...9
+
+vc pode multiplicar o resultado de Math.random() por algum número, como por ex: 4, logo vc terá números entre 0.1~3.9
+
+Math.floor() = aredondamento para baixo
+--------------------------------
+Function
+
+function name(){}
+()=>{}
+const name = ()=>{}
+--------------------------------
+Array methods
+
+1- forEach
+
+Method para percorrer um array. 
+
+obs: muito últil para uma nodeList.
+ex:
+const  btns = document.querySelectorAll(".btn");
+
+btns.forEach((btn)=>{
+    btn.addEventListener('click', ()=>{
+        console.log(btn);
+    })
+})
+
+Esse código adiciona um evento para cada "btn". 
+
+2- sort 
+
+Method para ordenar um array
+--------------------------------
+Methods
+
+1
+.replace('char', 'newChar')
+
+ex: number = "12.550"
+number.replace('.', '')
+
+No exemplo o ponto é substituido por uma string vazia.
+
+2
+number()
+
+Transforma em um número.
+ex: const number = "12.550"
+number(number)
+
+No exemplo a string "12.550" virou o número 12.550.
+obs: Não virou 12mil e 550 virou 12.55(12 e 55cents)
+
+3
+.toLocaleString()
+ex: const number = "12.550"
+number.toLocaleString()
+
+Transforma o número em uma string.
+obs: No padrão americano.
+
+number.toLocaleString('pt-BR') 
+Padrão brasileiro
+
+4
+.split
+
+ex: const text = "eu ganhei 1 real"
+text.split(' ')
+
+O split transformou text em um array de tamnho 4, pois a cada espaço (' ') dado pelo user
+ele coloca em uma posição.
+obs: Dependendo do que foi passado dentro dos parênteses do split o resultado muda.
+
+5 
+.map 
+
+arr.map(()=>{})
+
+O método map() invoca a função callback passada por argumento para cada elemento do Array e devolve um novo Array como resultado.
+
+6
+.join 
+
+O método join() junta todos os elementos de um array (ou um array-like object) em uma string e retorna esta string.
+
+arr.join() 
+
+O join transforma todo o array em uma string.
+
+arr.join("")
+
+O join transforma todo o array em uma string e separa todos os elementos com uma string vazia.
+
+7
+.filter
+
+arr.filter(()=>{})
+
+O método filter() cria um novo array com todos os elementos que passaram no teste implementado pela função fornecida.
+
+8
+.reduce
+
+A função reducer recebe quatro parâmetros:
+
+Acumulador (acc)
+Valor Atual (cur)
+Index Atual (idx)
+Array original (src)
+
+O valor de retorno da sua função reducer é atribuída ao acumulador. O acumulador, com seu valor atualizado, é repassado para cada iteração subsequente pelo array, que por fim, se tornará o valor resultante, único, final.
+
+callback
+Função que é executada em cada valor no array (exceto no primeiro, se nenhum valorInicial for passado); recebe quatro argumentos:
+
+acumulador
+É o valor inicial (ou o valor do callback anterior). Este valor inicia com o valorInicial e será retornado na última iteração.
+
+valorAtual
+Opcional. O índice do elemento atual que está sendo processado no array. Começa a partir do index 0 se um valorInicial for fornecido. Do contrário, começa do index 1.
+
+valorInicial
+Opcional. Valor a ser usado como o primeiro argumento da primeira chamada da função callback. Se nenhum valorInicial é fornecido, o primeiro elemento do array será usado como o valor inicial do acumulador e o valorAtual não será lido. Chamar reduce() em uma array vazia sem valor inicial retornará um erro.
+
+9
+.includes
+
+Verifica se o array contém determinado item.
+
+retorna true ou false
+
+ex:
+const array1 = [1, 2, 3];
+
+console.log(array1.includes(2));
+// Expected output: true
+
+const pets = ['cat', 'dog', 'bat'];
+
+console.log(pets.includes('cat'));
+// Expected output: true
+
+console.log(pets.includes('at'));
+// Expected output: false
+
+10
+.push 
+
+Método usado para adicionar elementos no final de um array e retorna o novo tamanho do array.
+
+ex:
+const animals = ['pigs', 'goats', 'sheep'];
+
+const count = animals.push('cows');
+console.log(count);
+// Expected output: 4
+console.log(animals);
+// Expected output: Array ["pigs", "goats", "sheep", "cows"]
+
