@@ -1,0 +1,7 @@
+O uso de `SET NODE_OPTIONS=--openssl-legacy-provider` antes de executar `react-scripts start` é uma solução específica para resolver um problema de compatibilidade relacionado ao OpenSSL.
+
+O problema que você estava enfrentando, conforme os erros indicavam, estava relacionado a uma incompatibilidade ou problema de suporte com as rotinas de envelope digital (parte da criptografia) do OpenSSL. Algumas operações criptográficas que o `react-scripts` realiza durante o processo de compilação podem não ser suportadas pela configuração padrão do OpenSSL ou podem ter problemas com a versão do OpenSSL instalada.
+
+Ao adicionar `SET NODE_OPTIONS=--openssl-legacy-provider` antes do comando `react-scripts start`, você está definindo uma variável de ambiente para o Node.js. Isso diz ao Node.js para usar uma versão mais antiga e compatível das rotinas de criptografia do OpenSSL, em vez da versão padrão. A versão mais antiga, chamada de "openssl-legacy-provider", pode lidar com algumas operações criptográficas que podem estar causando problemas com a versão padrão.
+
+Portanto, o uso de `SET NODE_OPTIONS=--openssl-legacy-provider` não é uma prática comum, mas sim uma solução específica para resolver o problema que você estava enfrentando com as rotinas de envelope digital do OpenSSL e as operações criptográficas realizadas pelo `react-scripts`. Em geral, sempre que você encontra problemas relacionados a bibliotecas e dependências, pode ser necessário usar soluções específicas para contornar esses problemas e garantir que seu projeto funcione conforme o esperado.

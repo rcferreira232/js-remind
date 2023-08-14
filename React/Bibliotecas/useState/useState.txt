@@ -1,0 +1,26 @@
+`useState` é um gancho (hook) na biblioteca React que permite que componentes funcionais gerenciem e atualizem o estado. O estado é uma maneira de armazenar e gerenciar dados dentro de um componente, e é frequentemente usado para controlar variáveis que podem mudar ao longo do tempo e afetar a renderização do componente.
+
+A sintaxe básica para usar o gancho `useState` é a seguinte:
+
+```jsx
+import React, { useState } from 'react';
+
+function Contador() {
+  // Declara uma variável de estado chamada "count" e a inicializa como 0
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>Contagem: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Incrementar</button>
+      <button onClick={() => setCount(count - 1)}>Decrementar</button>
+    </div>
+  );
+}
+```
+
+No exemplo acima, o gancho `useState` é usado para criar um pedaço de estado chamado `count` com um valor inicial de 0. Ele retorna um array com dois elementos: o valor atual da variável de estado (`count`) e uma função (`setCount`) que pode ser usada para atualizar o estado. A função `setCount` recebe um novo valor e provoca uma nova renderização do componente com o estado atualizado.
+
+Quando você clica no botão "Incrementar" ou "Decrementar" no exemplo, a função correspondente `setCount` é chamada com o novo valor para `count`, fazendo com que o componente seja re-renderizado e exiba o valor de contagem atualizado.
+
+`useState` é um gancho importante no React, porque permite que você gerencie o estado do componente dentro de componentes funcionais, permitindo a criação de interfaces de usuário mais interativas e dinâmicas.

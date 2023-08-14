@@ -1,0 +1,35 @@
+O Yarn é um gerenciador de pacotes para projetos JavaScript que oferece algumas vantagens sobre o npm padrão, como um desempenho mais rápido e resolução de dependências mais consistente. Aqui estão alguns comandos importantes do Yarn:
+
+1. **yarn init**: Inicia um novo projeto interativo, onde você pode definir informações como nome, versão, descrição, autor etc. Isso cria um arquivo `package.json`.
+
+2. **yarn install**: Instala as dependências listadas no arquivo `package.json`. Se o arquivo `yarn.lock` estiver presente, ele também é utilizado para garantir a consistência das versões das dependências.
+
+3. **yarn add [package]**: Instala uma nova dependência e a adiciona ao arquivo `package.json`. Você também pode especificar a flag `--dev` para instalá-la como uma dependência de desenvolvimento.
+
+4. **yarn remove [package]**: Remove uma dependência do projeto e atualiza o arquivo `package.json` automaticamente.
+
+5. **yarn upgrade [package]**: Atualiza uma dependência específica para a última versão disponível e atualiza o arquivo `yarn.lock`.
+
+6. **yarn global add [package]**: Instala um pacote globalmente no sistema, para que possa ser acessado a partir de qualquer projeto.
+
+7. **yarn list**: Lista todas as dependências instaladas no projeto.
+
+8. **yarn run [script]**: Executa um script definido no arquivo `package.json`, como scripts de teste, compilação etc.
+
+9. **yarn build**: Geralmente usado para criar uma versão de produção do seu projeto, como compilação de assets, minificação de código, entre outros.
+
+10. **yarn start**: Inicia o aplicativo, servidor ou processo principal do projeto.
+
+11. **yarn test**: Executa os testes definidos no projeto.
+
+12. **yarn upgrade**: Atualiza todas as dependências para suas versões mais recentes compatíveis, de acordo com as restrições definidas no arquivo `package.json`.
+
+13. **yarn outdated**: Mostra quais pacotes estão desatualizados em relação às versões mais recentes.
+
+14. **yarn info [package]**: Mostra informações sobre um pacote específico, como descrição, versões disponíveis e outras metainformações.
+
+15. **yarn cache clean**: Limpa o cache do Yarn, útil quando você deseja liberar espaço ou resolver problemas de instalação.
+
+16. **yarn import**: Permite importar as dependências de um projeto npm existente para um projeto Yarn.
+
+Lembre-se de consultar a documentação oficial do Yarn ou executar `yarn --help` para obter informações detalhadas sobre esses comandos e suas opções.

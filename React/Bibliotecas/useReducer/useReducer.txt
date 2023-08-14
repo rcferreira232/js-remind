@@ -1,0 +1,38 @@
+O `useReducer` é um dos ganchos (hooks) no React que fornece uma alternativa ao gerenciamento de estados complexos em componentes. Ele é útil quando o estado de um componente possui lógica mais avançada, e ajuda a lidar com essas situações de forma mais organizada e previsível.
+
+O `useReducer` é bastante similar ao `useState`, mas é mais adequado para cenários onde o estado tem várias transições diferentes ou quando há lógica mais complexa envolvida no gerenciamento do estado.
+
+Aqui está a sintaxe básica do `useReducer`:
+
+```jsx
+import React, { useReducer } from 'react';
+
+// Função reducer - recebe o estado atual e a ação, retorna o novo estado
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'INCREMENT':
+      return { count: state.count + 1 };
+    case 'DECREMENT':
+      return { count: state.count - 1 };
+    default:
+      return state;
+  }
+};
+
+function Contador() {
+  // Declaração do estado usando useReducer
+  const [state, dispatch] = useReducer(reducer, { count: 0 });
+
+  return (
+    <div>
+      <p>Contagem: {state.count}</p>
+      <button onClick={() => dispatch({ type: 'INCREMENT' })}>Incrementar</button>
+      <button onClick={() => dispatch({ type: 'DECREMENT' })}>Decrementar</button>
+    </div>
+  );
+}
+```
+
+Nesse exemplo, você define uma função `reducer` que recebe o estado atual e uma ação, e retorna o novo estado com base na ação. Então, no componente `Contador`, você utiliza o `useReducer` para gerenciar o estado. O `dispatch` é uma função que você utiliza para disparar as ações que são então processadas pela função reducer.
+
+O `useReducer` é especialmente útil em situações onde o estado possui múltiplas formas de atualização ou quando o estado depende de versões anteriores do próprio estado. Pode ser uma escolha mais clara e escalável do que usar `useState` em situações mais complexas.

@@ -1,0 +1,51 @@
+O `useRef` é mais um gancho (hook) importante no React que permite criar uma referência mutável que persiste ao longo de renderizações do componente. Ele é frequentemente usado para acessar ou interagir com elementos do DOM de forma direta, bem como para armazenar valores que não causam re-renderizações quando são atualizados.
+
+Aqui está a sintaxe básica do `useRef`:
+
+```jsx
+import React, { useRef } from 'react';
+
+function Exemplo() {
+  // Crie uma referência mutável inicializada com null
+  const myRef = useRef(null);
+
+  // Use a referência em um elemento do DOM ou para armazenar valores
+  // ...
+
+  return (
+    <div ref={myRef}>
+      {/* ... */}
+    </div>
+  );
+}
+```
+
+O exemplo acima cria uma referência mutável `myRef` usando o `useRef`. Essa referência pode ser usada para acessar o elemento do DOM associado ao componente (usando a propriedade `ref`), ou para armazenar valores que não causam re-renderização quando são alterados.
+
+Outra aplicação comum do `useRef` é capturar valores ou estados antigos para usá-los em efeitos sem causar re-renderizações adicionais. Por exemplo:
+
+```jsx
+import React, { useState, useEffect, useRef } from 'react';
+
+function Contador() {
+  const [count, setCount] = useState(0);
+  const prevCountRef = useRef();
+
+  useEffect(() => {
+    // Atualize o valor da referência com o valor anterior de count
+    prevCountRef.current = count;
+  }, [count]);
+
+  return (
+    <div>
+      <p>Contagem anterior: {prevCountRef.current}</p>
+      <p>Contagem atual: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Incrementar</button>
+    </div>
+  );
+}
+```
+
+Neste exemplo, o `useRef` é usado para armazenar o valor anterior da contagem (`prevCountRef.current`) para que ele possa ser exibido na renderização, enquanto a atual contagem (`count`) é gerenciada pelo estado.
+
+O `useRef` é uma ferramenta versátil que pode ser utilizada para várias finalidades, incluindo a interação com elementos do DOM, o armazenamento de valores persistentes entre renderizações e o acesso a valores antigos para fins de comparação.

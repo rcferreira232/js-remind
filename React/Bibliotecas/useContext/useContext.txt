@@ -1,0 +1,45 @@
+O `useContext` é um gancho (hook) no React que permite acessar o contexto de um componente sem a necessidade de passar propriedades manualmente entre componentes intermediários. Contexto é uma forma de compartilhar dados que podem ser considerados "globais" para um ramo específico da sua árvore de componentes.
+
+Vamos ver um exemplo de como usar o `useContext`:
+
+1. Primeiro, você define um contexto usando o `React.createContext`:
+
+```jsx
+import React from 'react';
+
+// Crie um contexto
+const MeuContexto = React.createContext();
+```
+
+2. Em seguida, você pode usar o `Provider` para envolver um componente ou uma parte da sua árvore de componentes, fornecendo os dados que deseja compartilhar:
+
+```jsx
+function App() {
+  return (
+    <MeuContexto.Provider value="Dados compartilhados">
+      {/* Outros componentes */}
+    </MeuContexto.Provider>
+  );
+}
+```
+
+3. Agora, em um componente filho, você pode acessar os dados compartilhados usando o `useContext`:
+
+```jsx
+import React, { useContext } from 'react';
+
+function ComponenteFilho() {
+  // Acesse o contexto usando o useContext
+  const dadosCompartilhados = useContext(MeuContexto);
+
+  return (
+    <div>
+      <p>{dadosCompartilhados}</p>
+    </div>
+  );
+}
+```
+
+No exemplo acima, o `useContext` permite que o componente `ComponenteFilho` acesse os dados compartilhados definidos no contexto `MeuContexto` sem precisar passá-los explicitamente como propriedades.
+
+O `useContext` é especialmente útil quando você tem dados ou funcionalidades que precisam ser acessados por vários componentes aninhados. Em vez de passar esses dados através de várias camadas de componentes intermediários, você pode usar o contexto para fornecê-los diretamente aos componentes que precisam deles. Isso pode simplificar bastante a propagação de dados e melhorar a organização do seu código.

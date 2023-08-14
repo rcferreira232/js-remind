@@ -1,0 +1,52 @@
+Claro, você pode adicionar e configurar o ESLint em uma aplicação já existente usando o Yarn da seguinte maneira:
+
+**Passo 1: Instalar o ESLint**
+
+No terminal, navegue até o diretório raiz da sua aplicação e execute o seguinte comando para instalar o ESLint como uma dependência de desenvolvimento usando o Yarn:
+
+```bash
+yarn add eslint --dev
+```
+
+**Passo 2: Inicializar a Configuração do ESLint**
+
+Inicie a configuração do ESLint da mesma forma como mencionei no passo anterior, usando o Yarn:
+
+```bash
+npx eslint --init
+```
+
+**Passo 3: Instalar Plugins e Configurações Adicionais (Opcional)**
+
+Se desejar, você pode instalar plugins e configurações adicionais para atender às necessidades específicas do seu projeto, da mesma forma como mencionei no passo anterior.
+
+**Passo 4: Configurar Scripts Yarn**
+
+Adicione os scripts de execução do ESLint ao seu arquivo `package.json`:
+
+```json
+"scripts": {
+  "lint": "eslint .",
+  "lint:fix": "eslint . --fix"
+}
+```
+
+**Passo 5: Executar o ESLint**
+
+Agora, use os scripts Yarn para executar o ESLint da mesma forma que mencionei anteriormente:
+
+```bash
+yarn lint
+```
+
+ou
+
+```bash
+yarn lint:fix
+```
+
+**Passo 6: Integração com Editores de Código (Opcional)**
+
+Da mesma forma, você pode integrar o ESLint ao seu editor de código para obter feedback em tempo real enquanto escreve código.
+
+Esses passos com Yarn são semelhantes aos mencionados anteriormente, mas com a substituição do comando `npm` pelo comando `yarn`. Com essa abordagem, você estará adicionando e configurando o ESLint em sua aplicação existente usando o gerenciador de pacotes Yarn.

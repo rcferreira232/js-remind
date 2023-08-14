@@ -1,0 +1,39 @@
+O `useEffect` é outro gancho (hook) fundamental no React que permite que você execute código lado a lado ao ciclo de vida do componente, realizando ações após a renderização inicial e/ou após atualizações subsequentes do componente. Isso é especialmente útil para realizar efeitos colaterais, como busca de dados, manipulação de DOM ou assinatura de eventos.
+
+Aqui está a sintaxe básica do `useEffect`:
+
+```jsx
+import React, { useState, useEffect } from 'react';
+
+function Exemplo() {
+  const [dados, setDados] = useState([]);
+
+  useEffect(() => {
+    // Este código será executado após a renderização inicial
+    // Aqui você pode fazer chamadas de API, manipular o DOM, etc.
+    // Você pode também retornar uma função de limpeza opcional
+
+    // Exemplo de chamada de API usando fetch:
+    fetch('https://api.exemplo.com/dados')
+      .then(response => response.json())
+      .then(data => setDados(data));
+
+    // Função de limpeza (opcional) a ser executada quando o componente é desmontado
+    return () => {
+      // Realize tarefas de limpeza, como cancelar assinaturas de eventos
+    };
+  }, []); // A lista de dependências vazia indica que o efeito é executado apenas após a renderização inicial
+
+  return (
+    <div>
+      {/* Renderize os dados */}
+    </div>
+  );
+}
+```
+
+No exemplo acima, o `useEffect` é utilizado para buscar dados de uma API após a renderização inicial do componente. A função passada para o `useEffect` é executada após a renderização e a cada atualização subsequente do componente. No entanto, passar um array vazio como segundo argumento indica que o efeito só deve ser executado após a renderização inicial, evitando execuções desnecessárias.
+
+O `useEffect` também é útil para lidar com efeitos colaterais que precisam ser desfeitos quando o componente é desmontado (como cancelar assinaturas de eventos ou limpar temporizadores). Para isso, você pode retornar uma função de limpeza a partir da função de efeito.
+
+Em resumo, o `useEffect` é utilizado para gerenciar efeitos colaterais em componentes funcionais do React, permitindo que você execute código após renderizações e atualizações, e também realize limpezas quando o componente é desmontado.
